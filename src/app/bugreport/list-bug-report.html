@@ -1,0 +1,82 @@
+<div class="mdl-card__title mdl-card--border">
+    <h2 class="mdl-card__title-text">Lista de Reports</h2>
+</div>
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--1-col"></div>
+    <div class="mdl-cell mdl-cell--10-col">
+        <button id="adiciona-categoria" ui-sref="index.categorias" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored show-modal">
+            Add Categoria de Report
+        </button>
+        <form action="#" id="search" class="alinha-direita">
+            <input type="text" class="pesquisar" placeholder="Digite o username" ng-model="searchText">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="waterfall-exp">
+                <i class="material-icons">search</i>
+            </label>
+        </form>
+        <div class="card-bug mdl-card mdl-shadow--2dp" ng-repeat="i in listaReports.report | filter:searchText | orderBy: 'numero'">
+            <div class="mdl-card__supporting-text card-bug-texto">
+                Data de Cadastro: {{i.created_at}}
+            </div>
+            <div class="mdl-card__supporting-text card-bug-texto">
+                Username: {{i.user}}
+            </div>
+            <div class="mdl-card__supporting-text card-bug-texto">
+                Descrição: {{i.description}}
+            </div>
+            <div class="mdl-card__menu">
+            <select name="multipleSelect" id="multipleSelect" class="pesquisar" ng-model="data.multipleSelect">
+                <option value="">Selecionar Status</option>
+                <option value="{{i.categoria}}" ng-repeat="i in status.tipo">{{i.categoria}}</option>
+            </select>
+                <button ng-click="changeStatus(data.multipleSelect, i.id)" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored">
+                    Salvar
+                </button>
+                <button ui-sref="index.bugReport({id: i.id})" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored">
+                    Detalhes
+                </button>
+                <br>
+                <div id="tt1" class="icon material-icons status-card {{i.status}}">label</div>
+                <div class="mdl-tooltip" for="tt1">
+                    finalizada
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            <div class="header-name">
+                <div class="ibox-title">
+                    <h5>Lista de Reports</h5>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="pull-left col-sm-3">
+                        <span class="input-group-btn">
+                      <button type="button" class="btn btn-sm btn-primary" ng-click="vm.newCategory()"> Adicionar
+                          Categoria
+                      </button>
+                    </span>
+                    </div>
+                    <div class="col-sm-3 pull-right">
+                        <div class="input-group">
+                            <input type="text" placeholder="user.." focus-on="search" id="search" ng-model="vm.entity.user" ng-enter="vm.get(vm.entity.user)" class="input-sm form-control">
+                            <span class="input-group-btn">
+                                    <button type="button" class="btn btn-sm btn-primary" ng-click="vm.get(vm.entity.user)"> Buscar
+                                        Report
+                                    </button>
+                                </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gridStyle" ui-grid="vm.gridOptions"></div>
+                <pagination ng-if="vm.gridOptions.data.length > 0" total-items="vm.total_items" items-per-page="vm.page_size" ng-model="vm.page" ng-change="vm.getAll()" class="pagination-sm" boundary-links="true" rotate="false" max-size="5" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;">
+            </div>
+        </div>
+    </div>
+</div>
+-->

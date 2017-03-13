@@ -1,0 +1,27 @@
+<div class="text-center animated fadeInDown hidden-sm">
+    <br>
+    <br>
+    <img src="../assets/images/heading_logo.png">
+    <br>
+    <br>
+</div>
+<div class="middle-box text-center loginscreen  animated fadeInDown">
+    <div>
+        <h3>Seja bem vindo Megazord</h3>
+        <p>Acesso ao Painel Administrativo</p>
+        <form class="m-t" name="megaForm" ng-submit="vm.submit(megaForm.$valid)" novalidate>
+            <div class="form-group" ng-class="{ 'has-error' : megaForm.email.$invalid && (!megaForm.email.$pristine || vm.submitted) }">
+                <input type="email" name="email" class="form-control" placeholder="E-mail" ng-model="vm.user.email" required>
+                <p ng-show="megaForm.email.$invalid && (!megaForm.email.$pristine || vm.submitted)" class="help-block">
+                    Campo obrigatório.</p>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' : megaForm.password.$invalid && (!megaForm.password.$pristine || vm.submitted) }">
+                <input type="password" name="password" class="form-control" placeholder="Senha" ng-model="vm.user.password">
+                <p ng-show="megaForm.password.$invalid && (!megaForm.password.$pristine || vm.submitted)" class="help-block">
+                    Campo obrigatório.</p>
+            </div>
+            <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+        </form>
+        <br>
+    </div>
+</div>

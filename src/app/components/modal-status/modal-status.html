@@ -1,0 +1,10 @@
+<div class="modal-header">
+    <p class="h3 modal-title">Atenção!</p>
+</div>
+<div class="modal-body">
+    <p><strong>{{vm.message}}</strong></p>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-flat" ng-if="vm.cancelButtonText" ng-click="vm.cancel()">{{vm.cancelButtonText}}</button>
+    <button class="btn btn-primary" ng-if="vm.okButtonText" ng-click="vm.ok()">{{vm.okButtonText}}</button>
+</div>

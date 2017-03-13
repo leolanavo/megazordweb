@@ -1,0 +1,21 @@
+Dependências: 
+
+nodejs, npm, gulp e bower veja no google como instalar.
+
+
+Depois de tudo instalado entre no repositório e dê os seguintes comandos:
+
+npm install
+
+bower install
+
+Depois de instalado todos os pacotes que serão utlizados no projeto rode:
+
+
+gulp build:dist - para gerar o build da versão de produção
+
+gulp serve - visualizar a versão de desenvolvimento
+
+gulp serve:dist - visualizar a versão de produção
+
+

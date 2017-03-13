@@ -1,0 +1,40 @@
+<div class="mdl-card__title mdl-card--border">
+    <h2 class="mdl-card__title-text">Lista de Usuários</h2>
+</div>
+<div class="mdl-grid">
+    <div class="horizontal">
+        <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet">
+            <form action="#" id="search" class="alinha-direita">
+                <input type="text" class="pesquisar" placeholder="" ng-model="searchText">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="waterfall-exp">
+                    <i class="material-icons">search</i>
+                </label>
+            </form>
+            <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp tabela-usuario">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="mdl-data-table__cell--non-numeric">Nome</th>
+                        <th>Username</th>
+                        <th>Grupo</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="i in userList | filter:searchText | orderBy: 'cn'">
+                        <td>
+                            <button ui-sref="index.userDetalhes({id: i.uid})" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored botao-tabela">
+                                Detalhes
+                            </button>
+                        </td>
+                        <td class="mdl-data-table__cell--non-numeric">{{i.cn}}</td>
+                        <td>{{i.uid}}</td>
+                        <td>{{i.grupo}}</td>
+                        <td>{{i.mail}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="mdl-cell mdl-cell--1-col"></div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="mdl-card__title mdl-card--border">
+    <h2 class="mdl-card__title-text">Máquinas</h2>
+</div>
+<span class="mdl-layout-title titulo-maquinas">Sala 130A (Primeiro andar)</span>
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone mdl-cell--4-col-tablet" ng-repeat="i in maquinasLinuxime">
+        <div class="card-maquinas mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title img-card mdl-card--border">
+                <img src="{{i.url}}" class="img-maquina">       
+            </div>
+            <div class="mdl-card__supporting-text">
+                {{i.name}}
+            </div>
+            <div class="mdl-card__supporting-text">
+                {{i.status}}
+            </div>
+            <div class="icon material-icons status-card {{i.status}} status-maquina">brightness_1</div>
+        </div>
+    </div>
+</div>
+<span class="mdl-layout-title titulo-maquinas">Sala 258A (BCC - Segundo andar)</span>
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone mdl-cell--4-col-tablet" ng-repeat="i in maquinasBcc">
+        <div class="card-maquinas mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title img-card mdl-card--border">
+                <img src="{{i.url}}" class="img-maquina">       
+            </div>
+            <div class="mdl-card__supporting-text">
+                {{i.name}}
+            </div>
+            <div class="mdl-card__supporting-text">
+                {{i.status}}
+            </div>
+            <div class="icon material-icons status-card {{i.status}} status-maquina">brightness_1</div>
+        </div>
+    </div>
+</div>

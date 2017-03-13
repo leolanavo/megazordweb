@@ -1,0 +1,53 @@
+<div class="mdl-card__title mdl-card--border">
+    <h2 class="mdl-card__title-text">Reportar Bugs</h2>
+</div>
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--1-col"></div>
+    <div class="mdl-cell mdl-cell--10-col mdl-cell--6-col-tablet">
+        <div class="card-bug mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__supporting-text texto-cardbug">
+                Sua participação em reportar os defeitos da rede é muito importante para nós e para os demais usuários, sempre que encontrar algum bug report aqui:
+            </div>
+            <br>
+            <select class="pesquisar">
+                <option value="">Tipo de Problema</option>
+                <option ng-repeat="i in categorias">{{i.name}}</option>
+            </select>
+            <ul class="demo-list-control mdl-list">
+                <li class="mdl-list__item">
+                    <span class="mdl-list__item-secondary-action">
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-1">
+                        <input type="checkbox" id="list-checkbox-1" class="mdl-checkbox__input" />
+                      </label>
+                    </span>
+                    <span class="mdl-list__item-primary-content">
+                      130A (Primeiro andar)
+                    </span>
+                </li>
+                <li class="mdl-list__item">
+                    <span class="mdl-list__item-secondary-action">
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-2">
+                        <input type="checkbox" id="list-checkbox-2" class="mdl-checkbox__input" />
+                      </label>
+                    </span>
+                    <span class="mdl-list__item-primary-content">
+                      258A (Sala BCC - Segundo andar)
+                    </span>
+                </li>
+            </ul>
+            <div class="mdl-card__actions mdl-card--border">
+                <form action="#">
+                    <div class="mdl-textfield mdl-js-textfield caixa-texto">
+                        <textarea class="mdl-textfield__input" type="text" rows="3" id="sample5" ng-model="bugReport.description"></textarea>
+                        <label class="mdl-textfield__label" for="sample5">Explique o defeito</label>
+                    </div>
+                </form>
+            </div>
+             <div class="mdl-card__actions ">
+                <button ng-click="bugReport.submit()" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored alinha-direita">
+                    Salvar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

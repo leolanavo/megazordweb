@@ -1,0 +1,31 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Lista de clientes</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="col-sm-3 pull-right">
+                        <div class="input-group">
+                            <input type="text" placeholder="Nome..." focus-on="search" id="search"
+                                   ng-model="vm.entity.name" ng-enter="vm.getAll()"
+                                   class="input-sm form-control">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-sm btn-primary" ng-click="vm.getAll()"> Buscar
+                                        Clientes
+                                    </button>
+                                </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gridStyle" style="height: 600px;" ui-grid="vm.gridOptions"></div>
+                <pagination ng-if="vm.gridOptions.data.length > 0" total-items="vm.total_items" items-per-page="vm.page_size"
+                    ng-model="vm.page"
+                    ng-change="vm.getAll()" class="pagination-sm" boundary-links="true"
+                    rotate="false" max-size="5" previous-text="&lsaquo;" next-text="&rsaquo;"
+                    first-text="&laquo;" last-text="&raquo;">
+            </div>
+        </div>
+    </div>
+</div>
