@@ -63,7 +63,7 @@ function maquinasCtrl($http, $scope, toaster) {
                     for (var maquina in response.data) {
                         if($scope.maquinasBcc[i].nameId == maquina){
                             $scope.maquinasBcc[i].status = "Ocupada";
-                            /*$scope.maquinasBcc[i].user = maquina.maquina;*/
+                            $scope.maquinasBcc[i].user = "- " + response.data[maquina];
                             break;
                         }
                     }
@@ -73,7 +73,7 @@ function maquinasCtrl($http, $scope, toaster) {
                     for (var maquina in response.data) {
                         if($scope.maquinasLinuxime[i].nameId == maquina){
                             $scope.maquinasLinuxime[i].status = "Ocupada";
-                            /*$scope.maquinasLinuxime[i].user = maquina.maquina;*/
+                            $scope.maquinasLinuxime[i].user = "- " + response.data[maquina];
                             break;
                         }
                     }
